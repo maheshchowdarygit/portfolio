@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
@@ -9,17 +9,17 @@ export function Footer() {
           {/* Column 1: Info & Pitch */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="flex h-6 w-6 items-center justify-center rounded bg-foreground text-background font-mono font-bold text-xs">
-                M
+              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-foreground text-background font-mono font-bold text-xs">
+                MC
               </span>
-              <span className="font-semibold text-sm">Mahesh</span>
+              <span className="font-semibold text-sm">Mahesh Chowdary</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Final-year B.Tech CS at ICFAI Tech, Hyderabad. Building high-throughput backend services, ML retrieval pipelines, and actionable data analytics.
+              Chirumamilla Mahesh Chowdary — Software Engineer specializing in backend architecture, systems programming in Go, and applied AI/ML retrieval systems.
             </p>
             <div className="inline-flex items-center gap-2 text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              Available for full-time startup roles (2025/2026)
+              Available for Software Engineer & Applied AI/ML roles
             </div>
           </div>
 
@@ -36,7 +36,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/projects" className="text-muted-foreground hover:text-foreground transition-colors">
-                  All Projects & Case Studies
+                  Projects & Case Studies
                 </Link>
               </li>
               <li>
@@ -46,7 +46,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Get in Touch
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -55,9 +55,27 @@ export function Footer() {
           {/* Column 3: Direct Connect */}
           <div className="space-y-3 text-xs">
             <span className="font-semibold text-foreground uppercase tracking-wider text-[11px]">
-              Connect & Source
+              Direct Contact
             </span>
             <ul className="space-y-2">
+              <li>
+                <a
+                  href="tel:+919573409069"
+                  className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors font-mono"
+                >
+                  <Phone className="h-3.5 w-3.5" />
+                  <span>+91 9573409069</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:chirumamillamahesh2005@gmail.com"
+                  className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors font-mono"
+                >
+                  <Mail className="h-3.5 w-3.5" />
+                  <span>chirumamillamahesh2005@gmail.com</span>
+                </a>
+              </li>
               <li>
                 <a
                   href="https://github.com/maheshchowdarygit"
@@ -66,7 +84,7 @@ export function Footer() {
                   className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <Github className="h-3.5 w-3.5" />
-                  <span>GitHub Profile</span>
+                  <span>GitHub</span>
                   <ArrowUpRight className="h-3 w-3 opacity-60" />
                 </a>
               </li>
@@ -78,27 +96,7 @@ export function Footer() {
                   className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <Linkedin className="h-3.5 w-3.5" />
-                  <span>LinkedIn Profile</span>
-                  <ArrowUpRight className="h-3 w-3 opacity-60" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:mahesh@example.com"
-                  className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <Mail className="h-3.5 w-3.5" />
-                  <span>mahesh@example.com</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <span>Download Resume (PDF)</span>
+                  <span>LinkedIn</span>
                   <ArrowUpRight className="h-3 w-3 opacity-60" />
                 </a>
               </li>
@@ -107,8 +105,8 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Mahesh. Built with Next.js & Tailwind CSS.</p>
-          <p className="font-mono text-[11px]">Hyderabad, Telangana, India</p>
+          <p>© {new Date().getFullYear()} Chirumamilla Mahesh Chowdary. All rights reserved.</p>
+          <p className="font-mono text-[11px]">Hyderabad, India</p>
         </div>
       </div>
     </footer>

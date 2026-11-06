@@ -1,81 +1,80 @@
 ---
 title: "Lost & Found Items Portal"
-tagline: "Campus asset recovery portal connecting students and campus security with verified claims."
-description: "A centralized campus web application facilitating lost item reporting, claim verification, automated match notifications, and administrative chain-of-custody tracking."
+tagline: "Campus asset recovery portal with relational database schema, query filters, and claim workflows."
+description: "A campus web application built with PHP and MySQL facilitating lost and found item reporting, claim verification, and categorized item listings. Features normalized relational schema design, secure authentication, and optimized SQL joins for real-time search."
 category: "Full Stack"
-tags: ["PHP", "MySQL", "JavaScript", "Bootstrap", "Web Security", "Relational Database"]
-date: "2023-04"
+tags: ["PHP", "MySQL", "SQL", "Web Application", "Relational Database", "Authentication"]
+date: "2023"
 featured: true
 order: 3
 metrics:
-  - label: "Claim Recovery Rate"
-    value: "68% verified"
-  - label: "Campus Users"
-    value: "1,200+ students"
-  - label: "Items Logged"
-    value: "450+ items"
-  - label: "Avg Resolution"
-    value: "< 48 hours"
-githubUrl: "https://github.com/maheshchowdarygit/campus-lost-and-found"
-liveUrl: "https://campus-lostfound.demo"
+  - label: "Backend"
+    value: "PHP MVC"
+  - label: "Database"
+    value: "MySQL Relational"
+  - label: "Core Feature"
+    value: "Search & Filter"
+  - label: "Auth"
+    value: "Session Auth"
+githubUrl: "https://github.com/maheshchowdarygit/lost-found-items"
 role: "Full-Stack Developer"
-duration: "4 weeks"
+duration: "Standalone Project"
 ---
 
 ## Overview
 
-A pragmatic, campus-focused web portal developed for ICFAI Tech students, faculty, and administrative security staff to replace uncoordinated WhatsApp groups and notice-board notices with a searchable, authenticated lost-and-found repository.
+A practical campus web portal designed to help students and administrative staff report, track, and recover misplaced items across campus through an organized database and real-time query interface.
 
 ---
 
 ## Problem
 
-Across large university campuses with thousands of students, misplacing student ID cards, calculators, electronics, and keys causes significant stress and academic disruption. Previous methods suffered from:
-1. Fragmented communications across transient group chats.
-2. Vulnerability to fraudulent claims without verification questions.
-3. No audit trail or chain-of-custody records for high-value items handed in to campus security.
+On college campuses, lost student ID cards, notebooks, and electronics are often shared haphazardly across temporary group chats or bulletin boards. This causes:
+- Inefficient searchability without structured categorization or status tracking.
+- Difficulties in validating whether a claimant is the legitimate owner.
+- Lack of centralized records for resolved claims.
 
 ---
 
 ## Approach
 
 1. **Relational Database Design (MySQL)**:
-   - Designed a normalized 3NF schema encompassing users, categories, lost reports, found items, claim disputes, and activity logs.
-   - Built full-text search indexes on item descriptions and location tags to enable instantaneous keyword filtering.
-2. **Verification Protocol**:
-   - Implemented a "Proof of Ownership" challenge workflow: finders or security guards specify a private security question (e.g., *"What sticker is on the back of the laptop?"*) that claimants must answer before location handover details are revealed.
-3. **Security & Authentication**:
-   - Implemented parameterized queries and PDO prepared statements to defend against SQL injection.
-   - Enforced CSRF tokens on all mutating POST requests and sanitized HTML user inputs to prevent stored XSS attacks.
+   - Designed and built normalized relational schema and backend queries powering item posting, status tracking (lost, found, claimed), categories, and user accounts.
+   - Indexed frequently queried fields (category, timestamp, status, location tags) to speed up search lookups.
+2. **Search & Filter Query Logic**:
+   - Wrote optimized SQL joins and multi-condition filtered queries to support real-time search across active listings.
+   - Allowed filtering by item type, date range, and location found.
+3. **Claim Workflows & Authentication**:
+   - Implemented user registration and session-based authentication to manage listings.
+   - Built a claim workflow enabling users to submit ownership details and contact information to securely arrange handoffs.
 
 ---
 
 ## Architecture & Tech Stack
 
 ```
-Student / Admin Browser ──► Apache / Nginx ──► PHP Application Logic (MVC)
-                                                      │
-                                                      ├──► MySQL Database (InnoDB)
-                                                      └──► Local Encrypted File Storage (Item Photos)
+[ Student / User ] ──► Web Browser ──► PHP Application Backend
+                                              │
+                                              ├──► User Session Auth
+                                              ├──► Query & Filter Engine
+                                              └──► MySQL Database (InnoDB Schema & Joins)
 ```
 
 ### Core Technologies
-- **Backend**: PHP 8.1 (Object-Oriented MVC structure, PDO abstraction).
-- **Database**: MySQL 8.0 (Normalized schema, indexing, foreign key constraints).
-- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 5.
-- **Security**: Argon2id password hashing, CSRF protection, secure session management.
+- **Backend**: PHP — server-side rendering, request routing, and business logic.
+- **Database**: MySQL — relational schema design, foreign key integrity, and indexed SQL queries.
+- **Frontend**: HTML5, CSS3, JavaScript — responsive interface for listing items and browsing claims.
 
 ---
 
 ## Result
 
-- Successfully piloted within ICFAI Tech campus security office.
-- Logged over 450 items with a 68% claim recovery rate within the first academic semester.
-- Cut down lost ID card replacement requests by nearly 35% through rapid identification.
+- Designed and built the MySQL schema and backend queries powering item posting, search/filter, and claim workflows.
+- Wrote SQL joins and filtered queries to support real-time search across listings with basic authentication.
+- Provided a clean, intuitive interface for campus item tracking and recovery.
 
 ---
 
 ## Links
 
-- **GitHub Repository**: [github.com/maheshchowdarygit/campus-lost-and-found](https://github.com/maheshchowdarygit/campus-lost-and-found)
-- **Demo Showcase**: [campus-lostfound.demo](https://campus-lostfound.demo)
+- **GitHub Repository**: [github.com/maheshchowdarygit/lost-found-items](https://github.com/maheshchowdarygit/lost-found-items)

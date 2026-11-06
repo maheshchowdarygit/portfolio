@@ -28,67 +28,108 @@ endobj
 endobj
 4 0 obj
 <<
-  /Length 1320
+  /Length 2400
 >>
 stream
 BT
-/F2 20 Tf
-50 740 Td
-(MAHESH - RESUME) Tj
-/F1 10 Tf
-0 -18 Td
-(Hyderabad, India | mahesh@example.com | github.com/maheshchowdarygit | linkedin.com/in/maheshchowdary) Tj
-/F2 12 Tf
-0 -30 Td
+/F2 16 Tf
+50 745 Td
+(CHIRUMAMILLA MAHESH CHOWDARY) Tj
+/F2 10 Tf
+0 -16 Td
+(SOFTWARE ENGINEER | BACKEND SYSTEMS, DATA & APPLIED ML) Tj
+/F1 9 Tf
+0 -14 Td
+(+91 9573409069 | chirumamillamahesh2005@gmail.com | linkedin.com/in/maheshchowdary | github.com/maheshchowdarygit | Hyderabad, India) Tj
+/F2 10 Tf
+0 -22 Td
+(SUMMARY) Tj
+/F1 8.5 Tf
+0 -13 Td
+(Computer science undergraduate with hands-on, end-to-end engineering experience spanning backend systems, data pipelines, and) Tj
+0 -11 Td
+(applied machine learning - from building a full-text search engine from scratch in Go to a RAG system over the Anthropic API.) Tj
+0 -11 Td
+(Comfortable across backend architecture, relational database design (SQL/MySQL), and Python-based data work (Pandas, NumPy, TensorFlow).) Tj
+/F2 10 Tf
+0 -20 Td
 (EDUCATION) Tj
-/F1 10 Tf
-0 -16 Td
-(ICFAI Tech (Faculty of Science & Technology), Hyderabad - B.Tech in Computer Science (2021-2025)) Tj
-0 -14 Td
-(Core: Data Structures, Systems Programming, Information Retrieval, Machine Learning, DBMS, OS) Tj
-/F2 12 Tf
-0 -26 Td
-(TECHNICAL SKILLS) Tj
-/F1 10 Tf
-0 -16 Td
-(Languages & Backend: Go (Golang), Python, FastAPI, Node.js, PHP, SQL, PostgreSQL, MySQL, Redis) Tj
-0 -14 Td
-(Data & ML: Scikit-Learn, PyTorch, Pandas, NumPy, Pinecone, BM25, Tree-Sitter AST, Vector Search) Tj
-0 -14 Td
-(Tools & Infrastructure: Docker, Git, Linux, Next.js, TypeScript, Streamlit, Vercel, REST APIs) Tj
-/F2 12 Tf
-0 -26 Td
-(KEY PROJECTS) Tj
-/F2 10 Tf
-0 -16 Td
-(1. Local Search Engine in Go (Capstone Project)) Tj
-/F1 10 Tf
-0 -14 Td
-(- Built custom inverted index, streaming tokenizer, Porter stemmer, and BM25 probabilistic ranking.) Tj
-0 -14 Td
-(- Sub-15ms p99 query latency over 100K+ technical documents with zero external search dependencies.) Tj
+/F2 9 Tf
+0 -13 Td
+(ICFAI Foundation for Higher Education, Hyderabad - B.Tech, Computer Science & Engineering) Tj
+/F1 8.5 Tf
+0 -11 Td
+(2023 - 2027 | Hyderabad, India) Tj
 /F2 10 Tf
 0 -20 Td
-(2. RAG GitHub Repo Q&A (Python, FastAPI, LangChain, Pinecone)) Tj
-/F1 10 Tf
-0 -14 Td
-(- Ingests full codebases with Tree-sitter AST chunking, semantic embeddings, and hybrid dense+BM25 search.) Tj
-0 -14 Td
-(- 92% accurate answer grounding with line-level file citations.) Tj
+(EXPERIENCE) Tj
+/F2 9 Tf
+0 -13 Td
+(AI Research Intern & Tech Lead - VISWAM.AI (IIIT Hyderabad x Swecha)) Tj
+/F1 8.5 Tf
+0 -11 Td
+(06/2025 - 08/2025 | Hyderabad) Tj
+0 -11 Td
+(- Led data quality enforcement for large-scale Telugu audio-text corpus collection across ~200 contributors' submissions.) Tj
+0 -11 Td
+(- Built and maintained a version-controlled contribution-tracking workflow (Swecha GitLab) for audit visibility into data provenance.) Tj
+0 -11 Td
+(- Coordinated task allocation and milestone tracking as 1 of 10 Tech Leads, delivering 100% on-time completion across deliverables.) Tj
+/F2 9 Tf
+0 -15 Td
+(Machine Learning Intern - Coincent.ai) Tj
+/F1 8.5 Tf
+0 -11 Td
+(06/2024 - 08/2024 | Remote) Tj
+0 -11 Td
+(- Performed data cleaning, preprocessing, and exploratory analysis on labelled image datasets using Pandas and NumPy.) Tj
+0 -11 Td
+(- Evaluated model outputs against ground truth, iterating on preprocessing to improve classification accuracy by 20% using TensorFlow/Keras.) Tj
 /F2 10 Tf
 0 -20 Td
-(3. Lost & Found Items Portal (PHP, MySQL, Web Security)) Tj
-/F1 10 Tf
-0 -14 Td
-(- Centralized campus asset recovery portal with normalized relational schema, role-based auth, and CSRF protection.) Tj
-0 -14 Td
-(- Successfully piloted with campus security, recovering 450+ items with a 68% claim resolution rate.) Tj
-/F2 12 Tf
-0 -26 Td
-(TARGET ROLES) Tj
-/F1 10 Tf
-0 -16 Td
-(Data Analyst | Applied ML Engineer | Backend / AI-Adjacent Software Roles at Startups) Tj
+(PROJECTS) Tj
+/F2 9 Tf
+0 -13 Td
+(Local Search Engine - Go, TF-IDF, SQLite) Tj
+/F1 8.5 Tf
+0 -11 Td
+(- Built a full-text indexing and retrieval system processing 1,600+ documents, implementing a TF-IDF ranking pipeline from scratch.) Tj
+0 -11 Td
+(- Achieved sub-10ms query latency at scale by optimizing the inverted-index data structure.) Tj
+0 -11 Td
+(- Used SQLite for structured metadata storage alongside the custom index, packaged as a single deployable binary under 20MB.) Tj
+/F2 9 Tf
+0 -15 Td
+(RAG GitHub Repo Q&A - Python, Streamlit, ChromaDB, Anthropic API) Tj
+/F1 8.5 Tf
+0 -11 Td
+(- Built a full-stack RAG web app that ingests any public GitHub repository and answers natural-language questions about its codebase.) Tj
+0 -11 Td
+(- Designed ingestion pipeline to parse, chunk, and embed source files into ChromaDB for semantic top-K retrieval.) Tj
+0 -11 Td
+(- Integrated the Anthropic API to generate grounded, context-aware answers from retrieved snippets, cutting manual repo exploration time.) Tj
+/F2 9 Tf
+0 -15 Td
+(Lost & Found Items Portal - PHP, MySQL) Tj
+/F1 8.5 Tf
+0 -11 Td
+(- Designed and built MySQL schema and backend queries powering item posting, search/filter, and claim workflows.) Tj
+0 -11 Td
+(- Wrote SQL joins and filtered queries to support real-time search across listings with basic authentication.) Tj
+/F2 10 Tf
+0 -20 Td
+(SKILLS) Tj
+/F1 8.5 Tf
+0 -13 Td
+(Core: Python (Pandas, NumPy) | Go | SQL (MySQL) | Backend & API Design | Data Structures & Algorithms | System Design) Tj
+0 -11 Td
+(Also familiar with: Java, PHP, JavaScript, HTML5/CSS3, C, TensorFlow, Keras, OpenCV, Linux/Bash, Git/GitLab) Tj
+/F2 10 Tf
+0 -20 Td
+(CERTIFICATIONS) Tj
+/F1 8.5 Tf
+0 -13 Td
+(Azure AI Fundamentals (Microsoft) | AWS Cloud Practitioner Essentials | Cybersecurity Fundamentals (IBM) | LLM Prompt Engineering (NVIDIA)) Tj
 ET
 endstream
 endobj
@@ -113,13 +154,13 @@ xref
 0000000058 00000 n 
 0000000115 00000 n 
 0000000266 00000 n 
-0000001638 00000 n 
-0000001707 00000 n 
+0000002718 00000 n 
+0000002787 00000 n 
 trailer
 <<
   /Size 7
   /Root 1 0 R
 >>
 startxref
-1781
+2861
 %%EOF
