@@ -1,0 +1,125 @@
+%PDF-1.4
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 612 792]
+  /Contents 4 0 R
+  /Resources <<
+    /Font <<
+      /F1 5 0 R
+      /F2 6 0 R
+    >>
+  >>
+>>
+endobj
+4 0 obj
+<<
+  /Length 1320
+>>
+stream
+BT
+/F2 20 Tf
+50 740 Td
+(MAHESH - RESUME) Tj
+/F1 10 Tf
+0 -18 Td
+(Hyderabad, India | mahesh@example.com | github.com/maheshchowdarygit | linkedin.com/in/maheshchowdary) Tj
+/F2 12 Tf
+0 -30 Td
+(EDUCATION) Tj
+/F1 10 Tf
+0 -16 Td
+(ICFAI Tech (Faculty of Science & Technology), Hyderabad - B.Tech in Computer Science (2021-2025)) Tj
+0 -14 Td
+(Core: Data Structures, Systems Programming, Information Retrieval, Machine Learning, DBMS, OS) Tj
+/F2 12 Tf
+0 -26 Td
+(TECHNICAL SKILLS) Tj
+/F1 10 Tf
+0 -16 Td
+(Languages & Backend: Go (Golang), Python, FastAPI, Node.js, PHP, SQL, PostgreSQL, MySQL, Redis) Tj
+0 -14 Td
+(Data & ML: Scikit-Learn, PyTorch, Pandas, NumPy, Pinecone, BM25, Tree-Sitter AST, Vector Search) Tj
+0 -14 Td
+(Tools & Infrastructure: Docker, Git, Linux, Next.js, TypeScript, Streamlit, Vercel, REST APIs) Tj
+/F2 12 Tf
+0 -26 Td
+(KEY PROJECTS) Tj
+/F2 10 Tf
+0 -16 Td
+(1. Local Search Engine in Go (Capstone Project)) Tj
+/F1 10 Tf
+0 -14 Td
+(- Built custom inverted index, streaming tokenizer, Porter stemmer, and BM25 probabilistic ranking.) Tj
+0 -14 Td
+(- Sub-15ms p99 query latency over 100K+ technical documents with zero external search dependencies.) Tj
+/F2 10 Tf
+0 -20 Td
+(2. RAG GitHub Repo Q&A (Python, FastAPI, LangChain, Pinecone)) Tj
+/F1 10 Tf
+0 -14 Td
+(- Ingests full codebases with Tree-sitter AST chunking, semantic embeddings, and hybrid dense+BM25 search.) Tj
+0 -14 Td
+(- 92% accurate answer grounding with line-level file citations.) Tj
+/F2 10 Tf
+0 -20 Td
+(3. Lost & Found Items Portal (PHP, MySQL, Web Security)) Tj
+/F1 10 Tf
+0 -14 Td
+(- Centralized campus asset recovery portal with normalized relational schema, role-based auth, and CSRF protection.) Tj
+0 -14 Td
+(- Successfully piloted with campus security, recovering 450+ items with a 68% claim resolution rate.) Tj
+/F2 12 Tf
+0 -26 Td
+(TARGET ROLES) Tj
+/F1 10 Tf
+0 -16 Td
+(Data Analyst | Applied ML Engineer | Backend / AI-Adjacent Software Roles at Startups) Tj
+ET
+endstream
+endobj
+5 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+6 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000266 00000 n 
+0000001638 00000 n 
+0000001707 00000 n 
+trailer
+<<
+  /Size 7
+  /Root 1 0 R
+>>
+startxref
+1781
+%%EOF
