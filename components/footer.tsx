@@ -9,7 +9,7 @@ export function Footer() {
           {/* Column 1: Info & Pitch */}
           <div className="space-y-3">
             <div className="flex items-center gap-2.5">
-              <span className="flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-mono font-bold text-xs shadow-xs">
+              <span className="flex h-7 w-7 items-center justify-center rounded-xl bg-zinc-950 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-950 border border-zinc-800 dark:border-zinc-300 font-mono font-bold text-xs shadow-xs">
                 MC
               </span>
               <span className="font-bold text-sm text-foreground">Mahesh Chowdary</span>
@@ -17,8 +17,8 @@ export function Footer() {
             <p className="text-xs text-muted-foreground leading-relaxed">
               Chirumamilla Mahesh Chowdary — Software Engineer specializing in backend architecture, systems programming in Go, and applied AI/ML retrieval systems.
             </p>
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 shadow-2xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 shadow-2xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
               Available for Software Engineer & Applied AI/ML roles
             </div>
           </div>
@@ -41,7 +41,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                  About & Background
+                  About Me
                 </Link>
               </li>
               <li>

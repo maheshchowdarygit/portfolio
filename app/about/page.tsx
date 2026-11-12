@@ -17,7 +17,7 @@ import {
 import { CopyButton } from "@/components/copy-button";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Me",
   description:
     "About Chirumamilla Mahesh Chowdary: Software Engineer specializing in Backend Systems, Data & Applied ML. Education at ICFAI Foundation for Higher Education Hyderabad.",
 };
@@ -26,26 +26,26 @@ export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-14">
       {/* Bio Header */}
-      <section className="space-y-6 border-b border-border/40 pb-10 relative">
-        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-          <Sparkles className="h-3.5 w-3.5 text-emerald-500" />
+      <section className="space-y-6 border-b border-border pb-10 relative">
+        <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-semibold text-purple-600 dark:text-purple-400">
+          <Sparkles className="h-3.5 w-3.5 text-purple-500" />
           <span>Profile & Systems Focus</span>
         </div>
         <div className="space-y-2">
           <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider font-semibold">
             Chirumamilla Mahesh Chowdary
           </p>
-          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-foreground">
-            About <span className="text-gradient-primary">Mahesh</span>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-foreground">
+            About Me
           </h1>
         </div>
         <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-muted-foreground">
-          <span className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-card/60 px-3 py-1.5">
-            <MapPin className="h-3.5 w-3.5 text-rose-500" />
+          <span className="flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5">
+            <MapPin className="h-3.5 w-3.5 text-blue-500" />
             Hyderabad, India
           </span>
-          <span className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-card/60 px-3 py-1.5">
-            <GraduationCap className="h-3.5 w-3.5 text-primary" />
+          <span className="flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5">
+            <GraduationCap className="h-3.5 w-3.5 text-purple-500" />
             B.Tech Computer Science (2023 – 2027)
           </span>
         </div>
@@ -63,11 +63,9 @@ export default function AboutPage() {
       </section>
 
       {/* What I'm Looking For */}
-      <section className="space-y-5 rounded-3xl border border-border/80 bg-card/80 glass-panel p-6 sm:p-8 shadow-md shadow-black/5 relative overflow-hidden">
-        <div className="absolute top-0 right-0 h-48 w-48 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
-
-        <div className="flex items-center gap-3 text-foreground relative z-10">
-          <div className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
+      <section className="space-y-5 rounded-3xl border border-border bg-card glass-panel p-6 sm:p-8 shadow-xs relative">
+        <div className="flex items-center gap-3 text-foreground">
+          <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-500 border border-purple-500/20">
             <Target className="h-5 w-5" />
           </div>
           <div>
@@ -80,10 +78,10 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 relative z-10">
-          <div className="rounded-2xl border border-border/80 bg-background/80 p-5 space-y-2.5 shadow-2xs hover:border-emerald-500/40 hover:shadow-md transition-all">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+          <div className="rounded-2xl border border-border bg-background p-5 space-y-2.5 shadow-2xs hover:border-blue-500/50 transition-colors">
             <h3 className="font-bold text-sm text-foreground flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="h-2 w-2 rounded-full bg-blue-500" />
               Software Engineer
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
@@ -91,9 +89,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-border/80 bg-background/80 p-5 space-y-2.5 shadow-2xs hover:border-indigo-500/40 hover:shadow-md transition-all">
+          <div className="rounded-2xl border border-border bg-background p-5 space-y-2.5 shadow-2xs hover:border-purple-500/50 transition-colors">
             <h3 className="font-bold text-sm text-foreground flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse" />
+              <span className="h-2 w-2 rounded-full bg-purple-500" />
               Applied AI / ML Engineer
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
@@ -101,9 +99,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-border/80 bg-background/80 p-5 space-y-2.5 shadow-2xs hover:border-amber-500/40 hover:shadow-md transition-all">
+          <div className="rounded-2xl border border-border bg-background p-5 space-y-2.5 shadow-2xs hover:border-blue-500/50 transition-colors">
             <h3 className="font-bold text-sm text-foreground flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
+              <span className="h-2 w-2 rounded-full bg-blue-500" />
               Backend Systems & Data
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
@@ -258,7 +256,7 @@ export default function AboutPage() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-5 py-2.5 text-xs font-bold text-white shadow-md shadow-indigo-500/20 hover:scale-[1.02] transition-all"
+            className="inline-flex items-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 px-5 py-2.5 text-xs font-bold text-white shadow-xs transition-all hover:scale-[1.02]"
           >
             <FileText className="h-3.5 w-3.5" />
             <span>Download Resume</span>

@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 222 47% 11%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 221 83% 53%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 221 83% 53%; /* Aesthetic Blue */
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222 47% 11%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 262 83% 58%; /* Aesthetic Purple */
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
     --ring: 221 83% 53%;
-    --radius: 0.85rem;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-    --card: 224 71% 6%;
-    --card-foreground: 213 31% 91%;
-    --popover: 224 71% 6%;
-    --popover-foreground: 213 31% 91%;
-    --primary: 217 91% 60%;
+    --background: 240 10% 3.9%; /* Rich deep obsidian black */
+    --foreground: 0 0% 98%; /* Crisp white */
+    --card: 240 10% 6.5%; /* Refined dark card */
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 6.5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217 91% 60%; /* Clean vibrant Blue */
     --primary-foreground: 222 47% 11%;
-    --secondary: 222 47% 11%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 223 47% 11%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
+    --secondary: 240 3.7% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 12%;
+    --muted-foreground: 240 5% 64.9%; /* Refined zinc grey */
+    --accent: 263 70% 60%; /* Clean aesthetic Purple */
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-    --ring: 224 76% 48%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 16%; /* Sleek dark border */
+    --input: 240 3.7% 16%;
+    --ring: 217 91% 60%;
   }
 }
 
@@ -55,6 +55,9 @@
   }
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
@@ -62,84 +65,49 @@
   }
 }
 
-/* Modern grid & dot patterns */
-.bg-grid-pattern {
-  background-size: 32px 32px;
-  background-image: linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+/* Minimalist smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 140, 160, 0.25);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 160, 0.45);
 }
 
-.dark .bg-grid-pattern {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-}
-
-.bg-dot-pattern {
-  background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-.dark .bg-dot-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-}
-
-/* Glassmorphism utility */
+/* Clean glass panel styling (pure aesthetic, no rainbow gradients) */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(228, 228, 231, 0.85);
 }
 
 .dark .glass-panel {
-  background: rgba(13, 17, 28, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(18, 18, 22, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(39, 39, 42, 0.8);
 }
 
-/* Glowing text gradients */
-.text-gradient-primary {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Subtle dot pattern in clean neutral grey */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-.dark .text-gradient-primary {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.dark .bg-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
 }
 
-.text-gradient-accent {
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.dark .text-gradient-accent {
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Shimmer animation */
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
-  background-size: 200% 100%;
-  animation: shimmer 3s infinite;
-}
-
-/* Accessible focus ring styling for HCI */
+/* Accessible focus ring */
 *:focus-visible {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;

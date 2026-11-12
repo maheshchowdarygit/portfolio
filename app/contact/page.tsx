@@ -23,13 +23,13 @@ export default function ContactPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-12">
       {/* Header */}
-      <div className="space-y-4 border-b border-border/40 pb-8">
-        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-          <MessageSquare className="h-3.5 w-3.5 text-emerald-500" />
+      <div className="space-y-4 border-b border-border pb-8">
+        <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-3.5 py-1 text-xs font-semibold text-blue-600 dark:text-blue-400">
+          <MessageSquare className="h-3.5 w-3.5 text-blue-500" />
           <span>Direct Contact & Opportunities</span>
         </div>
-        <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-foreground">
-          Let&apos;s <span className="text-gradient-primary">Connect</span>
+        <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-foreground">
+          Let&apos;s Connect
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
           Have an open software engineering role, an interesting backend systems challenge, or an applied AI retrieval project? Reach out directly via phone, email, or send a message below.
@@ -39,7 +39,7 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Left Side: Contact Form (3 cols) */}
         <div className="md:col-span-3 space-y-4">
-          <div className="rounded-3xl border border-border/80 bg-card/80 glass-panel p-6 sm:p-8 shadow-xl shadow-indigo-500/5 space-y-5">
+          <div className="rounded-3xl border border-border bg-card glass-panel p-6 sm:p-8 shadow-sm space-y-5">
             <div>
               <h2 className="text-xl font-bold text-foreground">
                 Send a Message

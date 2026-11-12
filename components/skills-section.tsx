@@ -8,7 +8,7 @@ interface SkillCategory {
   title: string;
   subtitle: string;
   icon: React.ReactNode;
-  gradient: string;
+  borderAccent: string;
   badgeColor: string;
   skills: Array<{ name: string; highlight?: boolean }>;
 }
@@ -17,9 +17,9 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Core Technologies & Systems",
     subtitle: "High-performance backend systems, systems architecture & data structures",
-    icon: <Server className="h-5 w-5 text-emerald-400" />,
-    gradient: "from-emerald-500/10 via-teal-500/5 to-transparent",
-    badgeColor: "border-emerald-500/30 text-emerald-600 dark:text-emerald-300 bg-emerald-500/10",
+    icon: <Server className="h-5 w-5 text-blue-500" />,
+    borderAccent: "border-t-2 border-t-blue-500",
+    badgeColor: "border-blue-500/30 text-blue-600 dark:text-blue-400 bg-blue-500/10",
     skills: [
       { name: "Go (Golang)", highlight: true },
       { name: "Python (Pandas, NumPy)", highlight: true },
@@ -32,9 +32,9 @@ const skillCategories: SkillCategory[] = [
   {
     title: "AI, RAG & Machine Learning",
     subtitle: "Dense semantic retrieval, vector search & deep learning pipelines",
-    icon: <Brain className="h-5 w-5 text-indigo-400" />,
-    gradient: "from-indigo-500/10 via-purple-500/5 to-transparent",
-    badgeColor: "border-indigo-500/30 text-indigo-600 dark:text-indigo-300 bg-indigo-500/10",
+    icon: <Brain className="h-5 w-5 text-purple-500" />,
+    borderAccent: "border-t-2 border-t-purple-500",
+    badgeColor: "border-purple-500/30 text-purple-600 dark:text-purple-400 bg-purple-500/10",
     skills: [
       { name: "RAG Architectures", highlight: true },
       { name: "ChromaDB (Vector Search)", highlight: true },
@@ -48,9 +48,9 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Developer Tools & Infrastructure",
     subtitle: "Version control, Linux environments, CI/CD workflows & complementary tech",
-    icon: <Wrench className="h-5 w-5 text-amber-400" />,
-    gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
-    badgeColor: "border-amber-500/30 text-amber-600 dark:text-amber-300 bg-amber-500/10",
+    icon: <Wrench className="h-5 w-5 text-zinc-400" />,
+    borderAccent: "border-t-2 border-t-zinc-400 dark:border-t-zinc-600",
+    badgeColor: "border-zinc-500/30 text-zinc-700 dark:text-zinc-300 bg-zinc-500/10",
     skills: [
       { name: "Git & GitLab CI", highlight: true },
       { name: "Linux / Bash Scripting", highlight: true },
@@ -76,28 +76,28 @@ const certifications = [
     title: "AWS Cloud Practitioner",
     issuer: "Amazon Web Services",
     tag: "Cloud Architecture",
-    badgeBg: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20",
+    badgeBg: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
   },
   {
     title: "Cybersecurity Fundamentals",
     issuer: "IBM",
     tag: "Security",
-    badgeBg: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
+    badgeBg: "bg-zinc-500/10 text-zinc-700 dark:text-zinc-300 border-zinc-500/20",
   },
   {
     title: "LLM Prompt Engineering",
     issuer: "NVIDIA",
     tag: "Generative AI",
-    badgeBg: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
+    badgeBg: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
   },
 ];
 
 export function SkillsSection() {
   return (
     <section className="space-y-8">
-      <div className="flex flex-col gap-1.5 border-b border-border/40 pb-4">
+      <div className="flex flex-col gap-1.5 border-b border-border pb-4">
         <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          <Cpu className="h-3.5 w-3.5 text-primary" />
+          <Cpu className="h-3.5 w-3.5 text-blue-500" />
           <span>Technical Stack</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
@@ -116,12 +116,9 @@ export function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35, delay: idx * 0.1 }}
-            className="group relative flex flex-col justify-between rounded-2xl border border-border/80 bg-card/80 glass-panel p-6 shadow-md shadow-black/5 hover:shadow-xl hover:shadow-indigo-500/5 hover:-translate-y-1 transition-all overflow-hidden"
+            className={`flex flex-col justify-between rounded-2xl border border-border ${cat.borderAccent} bg-card glass-panel p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all overflow-hidden`}
           >
-            {/* Ambient Background Gradient */}
-            <div className={`absolute inset-0 bg-gradient-to-b ${cat.gradient} pointer-events-none opacity-60 group-hover:opacity-100 transition-opacity`} />
-
-            <div className="relative z-10">
+            <div>
               <div className="flex items-center gap-3 mb-3">
                 <div className="p-2.5 rounded-xl bg-card border border-border shadow-xs">
                   {cat.icon}
@@ -141,7 +138,7 @@ export function SkillsSection() {
                     className={`text-xs px-2.5 py-1 rounded-lg font-mono border transition-all ${
                       skill.highlight
                         ? `${cat.badgeColor} font-semibold shadow-2xs hover:scale-[1.02]`
-                        : "bg-muted/50 text-muted-foreground border-border/50 hover:text-foreground hover:bg-muted"
+                        : "bg-muted/50 text-muted-foreground border-border hover:text-foreground hover:bg-muted"
                     }`}
                   >
                     {skill.name}
@@ -154,10 +151,10 @@ export function SkillsSection() {
       </div>
 
       {/* Certifications Block */}
-      <div className="rounded-2xl border border-border/80 bg-card/70 glass-panel p-6 sm:p-7 space-y-4 shadow-md shadow-black/5">
+      <div className="rounded-2xl border border-border bg-card glass-panel p-6 sm:p-7 space-y-4 shadow-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5 text-foreground font-bold text-base">
-            <div className="p-1.5 rounded-lg bg-amber-500/10 text-amber-500 border border-amber-500/20">
+            <div className="p-1.5 rounded-lg bg-blue-500/10 text-blue-500 border border-blue-500/20">
               <Award className="h-4 w-4" />
             </div>
             <span>Industry Certifications</span>
@@ -169,19 +166,19 @@ export function SkillsSection() {
           {certifications.map((cert) => (
             <div
               key={cert.title}
-              className="group/cert rounded-xl border border-border/70 bg-background/80 p-4 flex flex-col justify-between gap-3 shadow-2xs hover:border-foreground/30 hover:shadow-md transition-all hover:-translate-y-0.5"
+              className="group/cert rounded-xl border border-border bg-background p-4 flex flex-col justify-between gap-3 shadow-2xs hover:border-foreground/30 hover:shadow-md transition-all hover:-translate-y-0.5"
             >
               <div>
                 <span className={`inline-block text-[10px] font-mono font-semibold px-2 py-0.5 rounded-md border mb-2 ${cert.badgeBg}`}>
                   {cert.tag}
                 </span>
-                <h4 className="text-xs sm:text-sm font-bold text-foreground leading-snug group-hover/cert:text-primary transition-colors">
+                <h4 className="text-xs sm:text-sm font-bold text-foreground leading-snug group-hover/cert:text-blue-500 transition-colors">
                   {cert.title}
                 </h4>
               </div>
-              <div className="flex items-center justify-between pt-2 border-t border-border/40 text-[11px] font-mono text-muted-foreground">
+              <div className="flex items-center justify-between pt-2 border-t border-border text-[11px] font-mono text-muted-foreground">
                 <span>{cert.issuer}</span>
-                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="h-3.5 w-3.5 text-blue-500 shrink-0" />
               </div>
             </div>
           ))}

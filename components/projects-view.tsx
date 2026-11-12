@@ -52,7 +52,7 @@ export function ProjectsView({ initialProjects }: ProjectsViewProps) {
                 onClick={() => setSelectedCategory(cat)}
                 className={`text-xs font-semibold px-3.5 py-1.5 rounded-xl transition-all ${
                   isSelected
-                    ? "bg-primary text-primary-foreground shadow-xs font-bold scale-[1.02]"
+                    ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-950 shadow-xs font-bold scale-[1.02]"
                     : "text-muted-foreground hover:bg-muted/80 hover:text-foreground"
                 }`}
               >

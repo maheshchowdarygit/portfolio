@@ -40,28 +40,28 @@ export function HeroShowcase() {
   const activeData = searchDemos[searchQuery] || searchDemos.concurrency;
 
   return (
-    <div className="w-full rounded-2xl border border-border/80 bg-card/70 glass-panel shadow-xl shadow-indigo-500/5 overflow-hidden transition-all">
+    <div className="w-full rounded-2xl border border-border bg-card glass-panel shadow-sm overflow-hidden transition-all">
       {/* Window Titlebar */}
-      <div className="flex items-center justify-between border-b border-border/60 bg-muted/40 px-4 py-2.5">
+      <div className="flex items-center justify-between border-b border-border bg-muted/50 px-4 py-2.5">
         <div className="flex items-center gap-2">
           <div className="flex gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
-            <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
+            <span className="h-2.5 w-2.5 rounded-full bg-zinc-400 dark:bg-zinc-600" />
+            <span className="h-2.5 w-2.5 rounded-full bg-zinc-400 dark:bg-zinc-600" />
+            <span className="h-2.5 w-2.5 rounded-full bg-zinc-400 dark:bg-zinc-600" />
           </div>
           <span className="ml-2 font-mono text-[11px] text-muted-foreground flex items-center gap-1.5">
-            <Terminal className="h-3 w-3 text-primary" />
+            <Terminal className="h-3 w-3 text-blue-500" />
             <span>systems-playground.sh</span>
           </span>
         </div>
 
         {/* Tab Controls */}
-        <div className="flex items-center gap-1 bg-background/80 p-0.5 rounded-lg border border-border/50 text-xs">
+        <div className="flex items-center gap-1 bg-background p-0.5 rounded-lg border border-border text-xs">
           <button
             onClick={() => setActiveTab("search")}
             className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md transition-all font-medium text-[11px] ${
               activeTab === "search"
-                ? "bg-primary text-primary-foreground shadow-xs font-semibold"
+                ? "bg-blue-600 text-white shadow-xs font-semibold"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -72,7 +72,7 @@ export function HeroShowcase() {
             onClick={() => setActiveTab("rag")}
             className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md transition-all font-medium text-[11px] ${
               activeTab === "rag"
-                ? "bg-primary text-primary-foreground shadow-xs font-semibold"
+                ? "bg-purple-600 text-white shadow-xs font-semibold"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -83,7 +83,7 @@ export function HeroShowcase() {
             onClick={() => setActiveTab("stats")}
             className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md transition-all font-medium text-[11px] ${
               activeTab === "stats"
-                ? "bg-primary text-primary-foreground shadow-xs font-semibold"
+                ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-950 shadow-xs font-semibold"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -114,7 +114,7 @@ export function HeroShowcase() {
                     onClick={() => handleQueryChange(q)}
                     className={`px-2.5 py-1 rounded-md border text-[11px] transition-all flex items-center gap-1 ${
                       searchQuery === q
-                        ? "border-sky-500 bg-sky-500/10 text-sky-600 dark:text-sky-300 font-semibold"
+                        ? "border-blue-500 bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold"
                         : "border-border bg-muted/40 text-muted-foreground hover:text-foreground"
                     }`}
                   >

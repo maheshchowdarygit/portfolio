@@ -11,41 +11,39 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, featured = false }: ProjectCardProps) {
-  // Dynamic theme colors per project type
   const isSearchEngine = project.slug.includes("search");
   const isRAG = project.slug.includes("rag");
-  const isPortal = project.slug.includes("lost");
 
-  const gradientHeader = isSearchEngine
-    ? "from-cyan-500 via-blue-500 to-indigo-500"
+  const borderAccent = isSearchEngine
+    ? "border-t-2 border-t-blue-500"
     : isRAG
-    ? "from-purple-500 via-indigo-500 to-pink-500"
-    : "from-amber-500 via-emerald-500 to-teal-500";
+    ? "border-t-2 border-t-purple-500"
+    : "border-t-2 border-t-zinc-400 dark:border-t-zinc-600";
 
-  const IconComponent = isSearchEngine ? Terminal : isRAG ? Brain : isPortal ? Database : Layers;
+  const iconStyle = isSearchEngine
+    ? "text-blue-500 bg-blue-500/10 border-blue-500/20"
+    : isRAG
+    ? "text-purple-500 bg-purple-500/10 border-purple-500/20"
+    : "text-zinc-500 dark:text-zinc-400 bg-zinc-500/10 border-zinc-500/20";
+
+  const IconComponent = isSearchEngine ? Terminal : isRAG ? Brain : Database;
 
   return (
     <motion.article
       initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
-      className="group relative flex flex-col justify-between rounded-2xl border border-border/80 bg-card/80 glass-panel p-6 shadow-md shadow-black/5 hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+      transition={{ duration: 0.35 }}
+      className={`group relative flex flex-col justify-between rounded-2xl border border-border ${borderAccent} bg-card glass-panel p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 overflow-hidden`}
     >
-      {/* Top Gradient Highlight Bar */}
-      <div
-        className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${gradientHeader} opacity-80 group-hover:opacity-100 group-hover:h-1.5 transition-all`}
-      />
-
       <div>
         {/* Top Meta Bar */}
         <div className="flex items-center justify-between gap-2 mb-4">
           <div className="flex items-center gap-2">
-            <div className="p-1.5 rounded-lg bg-primary/10 text-primary border border-primary/20">
+            <div className={`p-1.5 rounded-lg border ${iconStyle}`}>
               <IconComponent className="h-4 w-4" />
             </div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary/80 px-2.5 py-0.5 text-xs font-medium text-foreground border border-border/40">
-              {project.featured && <Sparkles className="h-3 w-3 text-amber-500" />}
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-2.5 py-0.5 text-xs font-semibold text-foreground border border-border">
               {project.category}
             </span>
           </div>
@@ -56,7 +54,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-lg hover:bg-muted/80 border border-transparent hover:border-border/60"
+                className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-lg hover:bg-muted border border-transparent hover:border-border"
                 aria-label={`View ${project.title} on GitHub`}
               >
                 <Github className="h-4 w-4" />
@@ -67,7 +65,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-lg hover:bg-muted/80 border border-transparent hover:border-border/60"
+                className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-lg hover:bg-muted border border-transparent hover:border-border"
                 aria-label={`View ${project.title} live demo`}
               >
                 <ExternalLink className="h-4 w-4" />
@@ -77,10 +75,10 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         </div>
 
         {/* Title */}
-        <Link href={`/projects/${project.slug}`} className="block group-hover:text-primary transition-colors">
+        <Link href={`/projects/${project.slug}`} className="block group-hover:text-blue-500 transition-colors">
           <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground flex items-center justify-between">
             <span>{project.title}</span>
-            <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-primary" />
+            <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-blue-500" />
           </h3>
         </Link>
 
@@ -91,7 +89,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
 
         {/* Key Metrics / Highlights if present */}
         {project.metrics && project.metrics.length > 0 && (
-          <div className="mt-4 grid grid-cols-2 gap-2 rounded-xl bg-muted/40 p-3 border border-border/50">
+          <div className="mt-4 grid grid-cols-2 gap-2 rounded-xl bg-muted/60 p-3 border border-border">
             {project.metrics.slice(0, 2).map((metric, i) => (
               <div key={i} className="text-left">
                 <span className="block text-[11px] font-medium text-muted-foreground truncate">
@@ -107,12 +105,12 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
       </div>
 
       {/* Footer Tags & CTA */}
-      <div className="mt-5 pt-4 border-t border-border/40 flex flex-wrap items-center justify-between gap-3">
+      <div className="mt-5 pt-4 border-t border-border flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap gap-1.5">
           {project.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-secondary text-secondary-foreground border border-border/40"
+              className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-secondary text-secondary-foreground border border-border"
             >
               {tag}
             </span>
@@ -126,7 +124,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
 
         <Link
           href={`/projects/${project.slug}`}
-          className="text-xs font-semibold text-primary hover:underline underline-offset-4 inline-flex items-center gap-1 group/link"
+          className="text-xs font-semibold text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 hover:underline underline-offset-4 inline-flex items-center gap-1 group/link"
         >
           Case Study
           <ArrowRight className="h-3 w-3 group-hover/link:translate-x-0.5 transition-transform" />

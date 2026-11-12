@@ -10,7 +10,7 @@ import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "About Me" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -24,28 +24,28 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 sm:top-3 z-50 w-full px-0 sm:px-4 transition-all">
-      <div className="max-w-5xl mx-auto h-16 sm:rounded-2xl glass-panel border-x-0 sm:border-x border-t-0 sm:border-t border-b border-border/80 px-4 sm:px-6 flex items-center justify-between shadow-xs backdrop-blur-xl">
+      <div className="max-w-5xl mx-auto h-16 sm:rounded-2xl glass-panel border-x-0 sm:border-x border-t-0 sm:border-t border-b border-border px-4 sm:px-6 flex items-center justify-between shadow-xs backdrop-blur-xl">
         {/* Brand */}
         <Link
           href="/"
           className="group flex items-center gap-3 font-medium tracking-tight text-foreground transition-all"
         >
-          <div className="relative flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 text-white font-mono font-bold text-xs shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-all">
+          <div className="relative flex h-8 w-8 items-center justify-center rounded-xl bg-zinc-950 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-950 font-mono font-bold text-xs shadow-xs border border-zinc-800 dark:border-zinc-300 group-hover:scale-105 transition-all">
             MC
-            <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-emerald-400 ring-2 ring-background animate-pulse" />
+            <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-blue-500 ring-2 ring-background" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-sm leading-tight text-foreground group-hover:text-primary transition-colors">
+            <span className="font-bold text-sm leading-tight text-foreground group-hover:text-blue-500 transition-colors">
               Mahesh Chowdary
             </span>
-            <span className="text-[11px] text-muted-foreground leading-tight hidden sm:block">
+            <span className="text-[11px] text-muted-foreground leading-tight hidden sm:block font-mono">
               Software Engineer
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1 text-sm bg-muted/40 p-1 rounded-xl border border-border/40">
+        <nav className="hidden md:flex items-center gap-1 text-sm bg-muted/60 p-1 rounded-xl border border-border">
           {navItems.map((item) => {
             const isActive =
               item.href === "/"
@@ -57,10 +57,10 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "px-3.5 py-1.5 rounded-lg transition-all text-xs font-medium relative",
+                  "px-3.5 py-1.5 rounded-lg transition-all text-xs font-semibold relative",
                   isActive
-                    ? "bg-background text-foreground font-semibold shadow-xs"
-                    : "text-muted-foreground hover:text-foreground hover:bg-background/50"
+                    ? "bg-background text-foreground shadow-xs"
+                    : "text-muted-foreground hover:text-foreground hover:bg-background/60"
                 )}
               >
                 {item.label}
@@ -75,7 +75,7 @@ export function Navbar() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xs hover:from-blue-500 hover:to-indigo-500 hover:shadow-md hover:shadow-indigo-500/20 transition-all hover:scale-[1.02]"
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white shadow-xs transition-all hover:scale-[1.02]"
           >
             <FileText className="h-3.5 w-3.5" />
             <span>Resume</span>
@@ -87,7 +87,7 @@ export function Navbar() {
           {/* Mobile menu toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-background/80 text-foreground hover:bg-muted transition-colors"
+            className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-background text-foreground hover:bg-muted transition-colors"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
