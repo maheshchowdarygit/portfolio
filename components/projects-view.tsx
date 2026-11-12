@@ -41,19 +41,19 @@ export function ProjectsView({ initialProjects }: ProjectsViewProps) {
   return (
     <div className="space-y-8">
       {/* Controls: Search & Category Filter Pills */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-2 rounded-2xl border border-border/80 bg-card/80 glass-panel shadow-xs">
         {/* Category Pills */}
-        <div className="flex flex-wrap items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
+        <div className="flex flex-wrap items-center gap-1.5 overflow-x-auto p-1">
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat;
             return (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`text-xs font-medium px-3 py-1.5 rounded-lg transition-all ${
+                className={`text-xs font-semibold px-3.5 py-1.5 rounded-xl transition-all ${
                   isSelected
-                    ? "bg-foreground text-background font-semibold shadow-sm"
-                    : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground"
+                    ? "bg-primary text-primary-foreground shadow-xs font-bold scale-[1.02]"
+                    : "text-muted-foreground hover:bg-muted/80 hover:text-foreground"
                 }`}
               >
                 {cat}
@@ -63,14 +63,14 @@ export function ProjectsView({ initialProjects }: ProjectsViewProps) {
         </div>
 
         {/* Search Input */}
-        <div className="relative min-w-[220px]">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+        <div className="relative min-w-[240px] px-1 sm:px-0">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
           <input
             type="text"
             placeholder="Search Go, RAG, Python..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-lg border border-border bg-background pl-9 pr-3 py-1.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+            className="w-full rounded-xl border border-border/80 bg-background/90 pl-9 pr-3.5 py-2 text-xs text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-inner"
           />
         </div>
       </div>

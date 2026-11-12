@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getFeaturedProjects } from "@/lib/projects";
 import { ProjectCard } from "@/components/project-card";
 import { SkillsSection } from "@/components/skills-section";
+import { HeroShowcase } from "@/components/hero-showcase";
 import { CopyButton } from "@/components/copy-button";
 import {
   Github,
@@ -16,6 +17,10 @@ import {
   MapPin,
   Terminal,
   ExternalLink,
+  Zap,
+  Brain,
+  Database,
+  ArrowUpRight,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -24,102 +29,156 @@ export default function HomePage() {
   return (
     <div className="flex flex-col gap-20 pb-20">
       {/* Hero Section */}
-      <section className="relative pt-12 sm:pt-20 border-b border-border/40 pb-16 bg-grid-pattern overflow-hidden">
-        {/* Subtle decorative ambient glow */}
-        <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-72 w-96 rounded-full bg-gradient-to-tr from-foreground/5 via-foreground/2 to-transparent blur-3xl" />
+      <section className="relative pt-10 sm:pt-16 pb-14 border-b border-border/40 overflow-hidden">
+        {/* Subtle decorative background gradient */}
+        <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-96 w-[700px] rounded-full bg-gradient-to-tr from-indigo-500/10 via-purple-500/10 to-sky-400/10 blur-3xl -z-10" />
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative">
-          <div className="max-w-3xl space-y-7">
-            {/* Status indicator */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400 backdrop-blur-xs">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Software Engineer • Leaning towards Applied AI/ML & Backend Roles</span>
-            </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative space-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left Column: Hero Text & Actions */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Status indicator */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 shadow-2xs backdrop-blur-xs">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Open for Software Engineer & Applied AI/ML Roles</span>
+              </div>
 
-            {/* Names & Title */}
-            <div className="space-y-3">
-              <div className="space-y-1">
-                <p className="text-xs sm:text-sm font-mono uppercase tracking-wider text-muted-foreground">
+              {/* Names & Title */}
+              <div className="space-y-2">
+                <p className="text-xs sm:text-sm font-mono uppercase tracking-wider text-muted-foreground font-semibold">
                   Chirumamilla Mahesh Chowdary
                 </p>
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground">
-                  Mahesh Chowdary
+                <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-foreground leading-[1.08]">
+                  Mahesh{" "}
+                  <span className="text-gradient-primary">
+                    Chowdary
+                  </span>
                 </h1>
+                <p className="text-lg sm:text-xl font-bold text-foreground/90 pt-1">
+                  Software Engineer — <span className="text-gradient-accent">Backend Systems & Applied AI</span>
+                </p>
               </div>
-              <p className="text-lg sm:text-xl font-medium text-foreground/90">
-                Software Engineer — Backend Systems, Data & Applied ML
-              </p>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl pt-1">
-                Computer science undergraduate at <strong className="text-foreground">ICFAI Foundation for Higher Education, Hyderabad</strong>. Hands-on experience building high-performance systems from scratch — from a custom Go inverted index search engine to a RAG codebase exploration tool over the Anthropic API.
-              </p>
-            </div>
 
-            {/* Direct Contact Pills (HCI accessible quick-action bar) */}
-            <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 rounded-lg border border-border bg-card/80 px-3 py-1.5 text-foreground shadow-2xs">
-                <Mail className="h-3.5 w-3.5 text-muted-foreground" />
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl">
+                Computer science undergraduate at <strong className="text-foreground">ICFAI Foundation for Higher Education, Hyderabad</strong>. Hands-on systems engineer specializing in high-performance Go search engines, RAG pipelines with ChromaDB & Anthropic Claude, and robust relational architectures.
+              </p>
+
+              {/* Direct Contact Pills */}
+              <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
+                <div className="flex items-center gap-1.5 rounded-xl border border-border/70 bg-card/70 glass-panel px-3 py-1.5 text-foreground shadow-2xs">
+                  <Mail className="h-3.5 w-3.5 text-primary" />
+                  <a
+                    href="mailto:chirumamillamahesh2005@gmail.com"
+                    className="hover:underline font-mono"
+                  >
+                    chirumamillamahesh2005@gmail.com
+                  </a>
+                  <CopyButton text="chirumamillamahesh2005@gmail.com" label="Copy" />
+                </div>
+
+                <div className="flex items-center gap-1.5 rounded-xl border border-border/70 bg-card/70 glass-panel px-3 py-1.5 text-foreground shadow-2xs">
+                  <Phone className="h-3.5 w-3.5 text-emerald-500" />
+                  <a href="tel:+919573409069" className="hover:underline font-mono">
+                    +91 9573409069
+                  </a>
+                  <CopyButton text="+919573409069" label="Copy" />
+                </div>
+
+                <div className="flex items-center gap-1.5 rounded-xl border border-border/70 bg-card/70 glass-panel px-3 py-1.5 text-muted-foreground">
+                  <MapPin className="h-3.5 w-3.5 text-rose-500" />
+                  <span>Hyderabad, India</span>
+                </div>
+              </div>
+
+              {/* Primary Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
-                  href="mailto:chirumamillamahesh2005@gmail.com"
-                  className="hover:underline font-mono"
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30 hover:scale-[1.02] transition-all"
                 >
-                  chirumamillamahesh2005@gmail.com
+                  <FileText className="h-4 w-4" />
+                  <span>View Full Resume</span>
+                  <ArrowUpRight className="h-3.5 w-3.5 opacity-80" />
                 </a>
-                <CopyButton text="chirumamillamahesh2005@gmail.com" label="Copy" />
-              </div>
 
-              <div className="flex items-center gap-1.5 rounded-lg border border-border bg-card/80 px-3 py-1.5 text-foreground shadow-2xs">
-                <Phone className="h-3.5 w-3.5 text-muted-foreground" />
-                <a href="tel:+919573409069" className="hover:underline font-mono">
-                  +91 9573409069
+                <a
+                  href="https://github.com/maheshchowdarygit"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-card/80 glass-panel px-4 py-2.5 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted transition-all shadow-2xs hover:border-foreground/30"
+                >
+                  <Github className="h-4 w-4" />
+                  <span>GitHub</span>
                 </a>
-                <CopyButton text="+919573409069" label="Copy" />
-              </div>
 
-              <div className="flex items-center gap-1 rounded-lg border border-border bg-card/80 px-3 py-1.5 text-muted-foreground">
-                <MapPin className="h-3.5 w-3.5" />
-                <span>Hyderabad, India</span>
+                <a
+                  href="https://www.linkedin.com/in/maheshchowdary/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-card/80 glass-panel px-4 py-2.5 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted transition-all shadow-2xs hover:border-foreground/30"
+                >
+                  <Linkedin className="h-4 w-4 text-blue-500" />
+                  <span>LinkedIn</span>
+                </a>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-card/80 glass-panel px-4 py-2.5 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted transition-all shadow-2xs hover:border-foreground/30"
+                >
+                  <Mail className="h-4 w-4 text-purple-500" />
+                  <span>Contact</span>
+                </Link>
               </div>
             </div>
 
-            {/* Primary Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-xs sm:text-sm font-semibold text-background shadow-xs hover:bg-foreground/90 transition-all hover:scale-[1.01]"
-              >
-                <FileText className="h-4 w-4" />
-                <span>View Full Resume</span>
-              </a>
+            {/* Right Column: Interactive Systems & AI Showcase Playground */}
+            <div className="lg:col-span-5">
+              <HeroShowcase />
+            </div>
+          </div>
 
-              <a
-                href="https://github.com/maheshchowdarygit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground hover:bg-muted transition-all shadow-2xs hover:border-foreground/30"
-              >
-                <Github className="h-4 w-4" />
-                <span>GitHub</span>
-              </a>
+          {/* Key Metrics / Highlights Ribbon */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4">
+            <div className="rounded-2xl border border-border/80 bg-card/70 glass-panel p-4 flex items-center gap-3 shadow-2xs">
+              <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 shrink-0">
+                <Zap className="h-5 w-5" />
+              </div>
+              <div>
+                <span className="block text-lg font-black font-mono text-foreground">&lt; 10ms</span>
+                <span className="block text-xs text-muted-foreground">Go Search Latency</span>
+              </div>
+            </div>
 
-              <a
-                href="https://www.linkedin.com/in/maheshchowdary/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground hover:bg-muted transition-all shadow-2xs hover:border-foreground/30"
-              >
-                <Linkedin className="h-4 w-4" />
-                <span>LinkedIn</span>
-              </a>
+            <div className="rounded-2xl border border-border/80 bg-card/70 glass-panel p-4 flex items-center gap-3 shadow-2xs">
+              <div className="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-500 border border-indigo-500/20 shrink-0">
+                <Brain className="h-5 w-5" />
+              </div>
+              <div>
+                <span className="block text-lg font-black font-mono text-foreground">RAG Pipeline</span>
+                <span className="block text-xs text-muted-foreground">ChromaDB + Claude</span>
+              </div>
+            </div>
 
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground hover:bg-muted transition-all shadow-2xs hover:border-foreground/30"
-              >
-                <Mail className="h-4 w-4" />
-                <span>Get in Touch</span>
-              </Link>
+            <div className="rounded-2xl border border-border/80 bg-card/70 glass-panel p-4 flex items-center gap-3 shadow-2xs">
+              <div className="p-2.5 rounded-xl bg-sky-500/10 text-sky-500 border border-sky-500/20 shrink-0">
+                <Briefcase className="h-5 w-5" />
+              </div>
+              <div>
+                <span className="block text-lg font-black font-mono text-foreground">200+ Peers</span>
+                <span className="block text-xs text-muted-foreground">Tech Lead @ Swecha</span>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border/80 bg-card/70 glass-panel p-4 flex items-center gap-3 shadow-2xs">
+              <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-500 border border-amber-500/20 shrink-0">
+                <Database className="h-5 w-5" />
+              </div>
+              <div>
+                <span className="block text-lg font-black font-mono text-foreground">B.Tech 2027</span>
+                <span className="block text-xs text-muted-foreground">ICFAI Hyderabad CSE</span>
+              </div>
             </div>
           </div>
         </div>
@@ -133,16 +192,16 @@ export default function HomePage() {
               <Sparkles className="h-3.5 w-3.5 text-amber-500" />
               <span>Featured Work</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
               Engineering Projects
             </h2>
             <p className="text-sm text-muted-foreground mt-1">
-              Real codebases with verified benchmarks across backend systems, AI retrieval, and relational web architectures.
+              Production architectures with verified benchmarks across backend systems, AI retrieval, and relational web platforms.
             </p>
           </div>
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap"
+            className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary hover:text-primary/80 transition-colors whitespace-nowrap"
           >
             <span>View all projects</span>
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -161,46 +220,47 @@ export default function HomePage() {
         <div className="flex items-center justify-between border-b border-border/40 pb-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
-              <Briefcase className="h-3.5 w-3.5 text-foreground" />
+              <Briefcase className="h-3.5 w-3.5 text-primary" />
               <span>Practical Background</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
               Work & Research Experience
             </h2>
           </div>
           <Link
             href="/about"
-            className="group inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-foreground hover:text-primary transition-colors"
+            className="group inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
           >
-            <span>More details</span>
+            <span>Full Background</span>
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* VISWAM.AI */}
-          <div className="rounded-xl border border-border/70 bg-card p-5 space-y-3 shadow-2xs hover:border-foreground/20 transition-all flex flex-col justify-between">
-            <div className="space-y-2">
+          <div className="group relative rounded-2xl border border-border/80 bg-card/80 glass-panel p-6 space-y-4 shadow-md shadow-black/5 hover:border-foreground/30 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-80 group-hover:h-1.5 transition-all" />
+            <div className="space-y-3">
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <h3 className="font-bold text-base text-foreground">
+                  <h3 className="font-bold text-base sm:text-lg text-foreground">
                     AI Research Intern & Tech Lead
                   </h3>
-                  <p className="text-xs font-medium text-primary mt-0.5">
+                  <p className="text-xs font-semibold text-primary mt-0.5">
                     VISWAM.AI (IIIT Hyderabad × Swecha)
                   </p>
                 </div>
-                <span className="text-[11px] font-mono text-muted-foreground bg-muted px-2 py-0.5 rounded shrink-0">
+                <span className="text-[11px] font-mono text-muted-foreground bg-secondary px-2.5 py-1 rounded-md shrink-0 border border-border/40">
                   06/2025 – 08/2025
                 </span>
               </div>
-              <p className="text-xs text-muted-foreground leading-relaxed pt-1">
-                Led data quality enforcement for large-scale Telugu audio-text corpus collection across ~200 contributors. Maintained version-controlled workflows in Swecha GitLab and coordinated task milestones as 1 of 10 Tech Leads.
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed pt-1">
+                Led data quality enforcement for large-scale Telugu audio-text corpus collection across ~200 contributors. Maintained version-controlled workflows in Swecha GitLab and coordinated task milestones as 1 of 10 Tech Leads with 100% on-time completion.
               </p>
             </div>
-            <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border/40">
+            <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border/40">
               {["Data Quality", "GitLab CI", "IIIT Hyderabad", "Audio-Text Corpus"].map((t) => (
-                <span key={t} className="text-[10px] font-mono bg-muted/60 text-muted-foreground px-2 py-0.5 rounded">
+                <span key={t} className="text-[11px] font-mono bg-secondary/80 text-secondary-foreground px-2 py-0.5 rounded-md border border-border/40">
                   {t}
                 </span>
               ))}
@@ -208,28 +268,29 @@ export default function HomePage() {
           </div>
 
           {/* Coincent.ai */}
-          <div className="rounded-xl border border-border/70 bg-card p-5 space-y-3 shadow-2xs hover:border-foreground/20 transition-all flex flex-col justify-between">
-            <div className="space-y-2">
+          <div className="group relative rounded-2xl border border-border/80 bg-card/80 glass-panel p-6 space-y-4 shadow-md shadow-black/5 hover:border-foreground/30 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-80 group-hover:h-1.5 transition-all" />
+            <div className="space-y-3">
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <h3 className="font-bold text-base text-foreground">
+                  <h3 className="font-bold text-base sm:text-lg text-foreground">
                     Machine Learning Intern
                   </h3>
-                  <p className="text-xs font-medium text-primary mt-0.5">
+                  <p className="text-xs font-semibold text-primary mt-0.5">
                     Coincent.ai
                   </p>
                 </div>
-                <span className="text-[11px] font-mono text-muted-foreground bg-muted px-2 py-0.5 rounded shrink-0">
+                <span className="text-[11px] font-mono text-muted-foreground bg-secondary px-2.5 py-1 rounded-md shrink-0 border border-border/40">
                   06/2024 – 08/2024
                 </span>
               </div>
-              <p className="text-xs text-muted-foreground leading-relaxed pt-1">
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed pt-1">
                 Conducted exploratory analysis and data preprocessing on labelled image datasets using Pandas and NumPy. Iterated on preprocessing pipelines to improve classification accuracy by 20% using TensorFlow/Keras.
               </p>
             </div>
-            <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border/40">
+            <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border/40">
               {["Python", "Pandas", "TensorFlow", "Keras", "Image Preprocessing"].map((t) => (
-                <span key={t} className="text-[10px] font-mono bg-muted/60 text-muted-foreground px-2 py-0.5 rounded">
+                <span key={t} className="text-[11px] font-mono bg-secondary/80 text-secondary-foreground px-2 py-0.5 rounded-md border border-border/40">
                   {t}
                 </span>
               ))}
@@ -245,28 +306,35 @@ export default function HomePage() {
 
       {/* Contact CTA Banner */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 w-full">
-        <div className="rounded-2xl border border-border bg-gradient-to-r from-card via-muted/20 to-card p-8 sm:p-10 shadow-2xs flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-xl">
-            <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+        <div className="relative overflow-hidden rounded-3xl border border-border/80 bg-card/90 glass-panel p-8 sm:p-12 shadow-xl shadow-indigo-500/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          {/* Decorative ambient glow inside banner */}
+          <div className="pointer-events-none absolute -top-12 -right-12 h-64 w-64 rounded-full bg-gradient-to-br from-indigo-500/20 via-purple-500/10 to-transparent blur-2xl" />
+
+          <div className="space-y-3 max-w-xl relative z-10">
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>Let&apos;s Build Together</span>
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight leading-tight">
               Interested in collaborating or discussing opportunities?
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              I am open to Software Engineering, Backend, and Applied AI/ML roles where I can contribute to building resilient, high-impact systems.
+              I am actively seeking Software Engineering, Backend Architecture, and Applied AI/ML roles where I can contribute to high-performance, resilient systems.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3 relative z-10">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-xs sm:text-sm font-semibold text-background hover:bg-foreground/90 transition-all shadow-xs"
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-3 text-xs sm:text-sm font-bold text-white shadow-lg shadow-indigo-500/20 hover:shadow-xl hover:shadow-indigo-500/30 hover:scale-[1.02] transition-all"
             >
               <span>Contact Mahesh</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="tel:+919573409069"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground hover:bg-muted transition-all"
+              className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-card/80 glass-panel px-4 py-3 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted transition-all shadow-2xs hover:border-foreground/30"
             >
-              <Phone className="h-3.5 w-3.5 text-muted-foreground" />
+              <Phone className="h-3.5 w-3.5 text-emerald-500" />
               <span>Call (+91 9573409069)</span>
             </a>
           </div>

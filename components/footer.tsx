@@ -3,21 +3,21 @@ import { Github, Linkedin, Mail, Phone, ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-muted/20 mt-20 transition-colors">
+    <footer className="border-t border-border/80 bg-card/60 glass-panel mt-20 transition-colors">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Column 1: Info & Pitch */}
           <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-foreground text-background font-mono font-bold text-xs">
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-mono font-bold text-xs shadow-xs">
                 MC
               </span>
-              <span className="font-semibold text-sm">Mahesh Chowdary</span>
+              <span className="font-bold text-sm text-foreground">Mahesh Chowdary</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
               Chirumamilla Mahesh Chowdary — Software Engineer specializing in backend architecture, systems programming in Go, and applied AI/ML retrieval systems.
             </p>
-            <div className="inline-flex items-center gap-2 text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 shadow-2xs">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
               Available for Software Engineer & Applied AI/ML roles
             </div>

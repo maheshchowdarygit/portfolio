@@ -26,86 +26,88 @@ export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-14">
       {/* Bio Header */}
-      <section className="space-y-4 border-b border-border/40 pb-8">
-        <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          <Sparkles className="h-3.5 w-3.5 text-amber-500" />
-          <span>Profile & Background</span>
+      <section className="space-y-6 border-b border-border/40 pb-10 relative">
+        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+          <Sparkles className="h-3.5 w-3.5 text-emerald-500" />
+          <span>Profile & Systems Focus</span>
         </div>
-        <div className="space-y-1">
-          <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
+        <div className="space-y-2">
+          <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider font-semibold">
             Chirumamilla Mahesh Chowdary
           </p>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-foreground">
-            About Mahesh
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-foreground">
+            About <span className="text-gradient-primary">Mahesh</span>
           </h1>
         </div>
-        <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-muted-foreground">
-          <span className="flex items-center gap-1.5">
-            <MapPin className="h-3.5 w-3.5 text-foreground/70" />
+        <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-muted-foreground">
+          <span className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-card/60 px-3 py-1.5">
+            <MapPin className="h-3.5 w-3.5 text-rose-500" />
             Hyderabad, India
           </span>
-          <span className="flex items-center gap-1.5">
-            <GraduationCap className="h-3.5 w-3.5 text-foreground/70" />
-            B.Tech Computer Science & Engineering (2023 – 2027)
+          <span className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-card/60 px-3 py-1.5">
+            <GraduationCap className="h-3.5 w-3.5 text-primary" />
+            B.Tech Computer Science (2023 – 2027)
           </span>
         </div>
         <div className="pt-2 text-base text-muted-foreground leading-relaxed space-y-4">
           <p>
-            I am a Computer Science undergraduate at <strong className="text-foreground">ICFAI Foundation for Higher Education, Hyderabad</strong> with hands-on, end-to-end engineering experience spanning backend systems, data pipelines, and applied machine learning.
+            I am a Computer Science undergraduate at <strong className="text-foreground">ICFAI Foundation for Higher Education, Hyderabad</strong> with hands-on, end-to-end engineering experience spanning high-throughput backend services, intelligent RAG pipelines, and systems programming.
           </p>
           <p>
-            My work focuses on building reliable, fast software from fundamentals — whether engineering a custom in-memory inverted index and TF-IDF search engine from scratch in Go achieving sub-10ms query latencies, or developing a full-stack code-exploration RAG system over the Anthropic Claude API and ChromaDB.
+            My engineering philosophy centers on building software from first principles — whether implementing an in-memory inverted index and TF-IDF search kernel from scratch in Go to hit sub-10ms query benchmarks, or architecting a complete code-intelligence exploration RAG pipeline over ChromaDB and the Anthropic Claude API.
           </p>
           <p>
-            I am equally comfortable across backend architecture, relational database design (SQL/MySQL), and Python-based data pipelines (Pandas, NumPy, TensorFlow).
+            I thrive in environments requiring rigorous data modeling (MySQL/PostgreSQL), concurrency and API design (Go/Python), and modern machine learning frameworks (Pandas, TensorFlow, HuggingFace embeddings).
           </p>
         </div>
       </section>
 
       {/* What I'm Looking For */}
-      <section className="space-y-5 rounded-2xl border border-border/80 bg-card p-6 sm:p-8 shadow-2xs">
-        <div className="flex items-center gap-2.5 text-foreground">
-          <div className="p-2 rounded-lg bg-foreground/5 border border-foreground/10">
-            <Target className="h-5 w-5 text-emerald-500" />
+      <section className="space-y-5 rounded-3xl border border-border/80 bg-card/80 glass-panel p-6 sm:p-8 shadow-md shadow-black/5 relative overflow-hidden">
+        <div className="absolute top-0 right-0 h-48 w-48 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
+
+        <div className="flex items-center gap-3 text-foreground relative z-10">
+          <div className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
+            <Target className="h-5 w-5" />
           </div>
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight">
               Target Roles & Focus
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
-              Software Engineer leaning towards Applied AI/ML and Backend Systems
+              Software Engineer leaning towards Applied AI/ML and High-Performance Backend Systems
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-          <div className="rounded-xl border border-border/80 bg-background/60 p-4 space-y-2">
-            <h3 className="font-semibold text-sm text-foreground flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 relative z-10">
+          <div className="rounded-2xl border border-border/80 bg-background/80 p-5 space-y-2.5 shadow-2xs hover:border-emerald-500/40 hover:shadow-md transition-all">
+            <h3 className="font-bold text-sm text-foreground flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               Software Engineer
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Core software engineering, backend services, clean architecture, high-efficiency API design, and systems programming.
+              Core backend architecture, concurrent microservices, type-safe API design, clean algorithms, and systems programming.
             </p>
           </div>
 
-          <div className="rounded-xl border border-border/80 bg-background/60 p-4 space-y-2">
-            <h3 className="font-semibold text-sm text-foreground flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
+          <div className="rounded-2xl border border-border/80 bg-background/80 p-5 space-y-2.5 shadow-2xs hover:border-indigo-500/40 hover:shadow-md transition-all">
+            <h3 className="font-bold text-sm text-foreground flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse" />
               Applied AI / ML Engineer
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              RAG architectures, semantic vector retrieval (ChromaDB), LLM application integration (Anthropic Claude), and embeddings.
+              Retrieval-Augmented Generation (RAG), vector embeddings (ChromaDB), LLM reasoning pipelines (Anthropic Claude), and AST code retrieval.
             </p>
           </div>
 
-          <div className="rounded-xl border border-border/80 bg-background/60 p-4 space-y-2">
-            <h3 className="font-semibold text-sm text-foreground flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+          <div className="rounded-2xl border border-border/80 bg-background/80 p-5 space-y-2.5 shadow-2xs hover:border-amber-500/40 hover:shadow-md transition-all">
+            <h3 className="font-bold text-sm text-foreground flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
               Backend Systems & Data
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Concurrent Go & Python services, relational database modeling (MySQL/PostgreSQL), and ETL data pipelines.
+              Concurrent Go/Python services, relational database schemas (MySQL), automated validation pipelines, and audio-text data curation.
             </p>
           </div>
         </div>
@@ -113,33 +115,35 @@ export default function AboutPage() {
 
       {/* Experience Timeline */}
       <section className="space-y-6">
-        <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-lg bg-foreground/5 border border-foreground/10">
-            <Briefcase className="h-5 w-5 text-foreground" />
+        <div className="flex items-center gap-3">
+          <div className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
+            <Briefcase className="h-5 w-5" />
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
+          <h2 className="text-xl sm:text-2xl font-black tracking-tight text-foreground">
             Experience & Internships
           </h2>
         </div>
 
-        <div className="relative border-l border-border/80 pl-6 ml-3 space-y-8">
+        <div className="relative border-l-2 border-indigo-500/30 pl-6 ml-4 space-y-10">
           {/* Internship 1: VISWAM.AI */}
-          <div className="relative space-y-2">
-            <div className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-foreground bg-background" />
+          <div className="relative space-y-3 rounded-2xl border border-border/80 bg-card/80 glass-panel p-6 shadow-md shadow-black/5 hover:border-foreground/30 transition-all">
+            <div className="absolute -left-[35px] top-7 h-4 w-4 rounded-full border-2 border-indigo-500 bg-background ring-4 ring-indigo-500/20" />
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-              <h3 className="text-base font-bold text-foreground">
-                AI Research Intern & Tech Lead
-              </h3>
-              <span className="text-xs font-mono text-muted-foreground bg-muted px-2 py-0.5 rounded">
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-foreground">
+                  AI Research Intern & Tech Lead
+                </h3>
+                <p className="text-xs font-semibold text-primary mt-0.5">
+                  VISWAM.AI (IIIT Hyderabad × Swecha)
+                </p>
+              </div>
+              <span className="text-xs font-mono text-muted-foreground bg-secondary px-3 py-1 rounded-md border border-border/40 shrink-0">
                 06/2025 – 08/2025 | Hyderabad
               </span>
             </div>
-            <p className="text-xs font-semibold text-primary">
-              VISWAM.AI (IIIT Hyderabad × Swecha)
-            </p>
-            <ul className="text-xs text-muted-foreground space-y-2 list-disc pl-4 pt-1 leading-relaxed">
+            <ul className="text-xs sm:text-sm text-muted-foreground space-y-2 list-disc pl-4 pt-1 leading-relaxed">
               <li>
-                Led data quality enforcement for a large-scale Telugu audio-text corpus collection effort, defining and applying accuracy/relevance benchmarks across ~200 contributors&apos; submissions, and flagging inconsistent samples before they entered the training pipeline.
+                Led data quality enforcement for a large-scale Telugu audio-text corpus collection effort, defining and applying accuracy/relevance benchmarks across ~200 contributors&apos; submissions.
               </li>
               <li>
                 Built and maintained a version-controlled contribution-tracking workflow (Swecha GitLab) for full audit visibility into data provenance across the residency.
@@ -151,20 +155,22 @@ export default function AboutPage() {
           </div>
 
           {/* Internship 2: Coincent.ai */}
-          <div className="relative space-y-2">
-            <div className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-border bg-background" />
+          <div className="relative space-y-3 rounded-2xl border border-border/80 bg-card/80 glass-panel p-6 shadow-md shadow-black/5 hover:border-foreground/30 transition-all">
+            <div className="absolute -left-[35px] top-7 h-4 w-4 rounded-full border-2 border-sky-500 bg-background ring-4 ring-sky-500/20" />
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-              <h3 className="text-base font-bold text-foreground">
-                Machine Learning Intern
-              </h3>
-              <span className="text-xs font-mono text-muted-foreground bg-muted px-2 py-0.5 rounded">
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-foreground">
+                  Machine Learning Intern
+                </h3>
+                <p className="text-xs font-semibold text-primary mt-0.5">
+                  Coincent.ai
+                </p>
+              </div>
+              <span className="text-xs font-mono text-muted-foreground bg-secondary px-3 py-1 rounded-md border border-border/40 shrink-0">
                 06/2024 – 08/2024 | Remote
               </span>
             </div>
-            <p className="text-xs font-semibold text-primary">
-              Coincent.ai
-            </p>
-            <ul className="text-xs text-muted-foreground space-y-2 list-disc pl-4 pt-1 leading-relaxed">
+            <ul className="text-xs sm:text-sm text-muted-foreground space-y-2 list-disc pl-4 pt-1 leading-relaxed">
               <li>
                 Performed data cleaning, preprocessing, and exploratory analysis on labelled image datasets using Pandas and NumPy prior to model training.
               </li>
@@ -178,30 +184,32 @@ export default function AboutPage() {
 
       {/* Education */}
       <section className="space-y-5">
-        <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-lg bg-foreground/5 border border-foreground/10">
-            <GraduationCap className="h-5 w-5 text-foreground" />
+        <div className="flex items-center gap-3">
+          <div className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
+            <GraduationCap className="h-5 w-5" />
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
+          <h2 className="text-xl sm:text-2xl font-black tracking-tight text-foreground">
             Education
           </h2>
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-6 shadow-2xs space-y-3">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-            <h3 className="text-base sm:text-lg font-bold text-foreground">
-              ICFAI Foundation for Higher Education, Hyderabad
-            </h3>
-            <span className="text-xs font-mono text-muted-foreground bg-muted px-2.5 py-1 rounded-md">
+        <div className="rounded-2xl border border-border/80 bg-card/80 glass-panel p-6 sm:p-7 shadow-md shadow-black/5 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 className="text-lg font-bold text-foreground">
+                ICFAI Foundation for Higher Education, Hyderabad
+              </h3>
+              <p className="text-sm font-semibold text-primary mt-0.5">
+                Bachelor of Technology (B.Tech) in Computer Science & Engineering
+              </p>
+            </div>
+            <span className="text-xs font-mono text-muted-foreground bg-secondary px-3 py-1 rounded-md border border-border/40 shrink-0">
               2023 – 2027
             </span>
           </div>
-          <p className="text-sm font-medium text-foreground/85">
-            Bachelor of Technology (B.Tech) in Computer Science & Engineering
-          </p>
-          <div className="pt-2 text-xs text-muted-foreground space-y-1.5 border-t border-border/40">
+          <div className="pt-3 text-xs sm:text-sm text-muted-foreground space-y-2 border-t border-border/40">
             <p>
-              <strong className="text-foreground">Foundations:</strong> Data Structures & Algorithms, Systems Programming, Database Management Systems, Information Retrieval, Machine Learning, Operating Systems.
+              <strong className="text-foreground">Core Coursework & Foundations:</strong> Data Structures & Algorithms, Systems Programming, Database Management Systems (SQL), Operating Systems, Distributed Systems, Information Retrieval, Machine Learning.
             </p>
           </div>
         </div>
@@ -209,52 +217,55 @@ export default function AboutPage() {
 
       {/* Certifications */}
       <section className="space-y-4">
-        <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-lg bg-foreground/5 border border-foreground/10">
-            <Award className="h-5 w-5 text-foreground" />
+        <div className="flex items-center gap-3">
+          <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-500 border border-amber-500/20">
+            <Award className="h-5 w-5" />
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
+          <h2 className="text-xl sm:text-2xl font-black tracking-tight text-foreground">
             Certifications
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           {[
-            { title: "Azure AI Fundamentals", issuer: "Microsoft" },
-            { title: "AWS Cloud Practitioner Essentials", issuer: "Amazon Web Services" },
-            { title: "Cybersecurity Fundamentals", issuer: "IBM" },
-            { title: "LLM Prompt Engineering", issuer: "NVIDIA" },
+            { title: "Azure AI Fundamentals", issuer: "Microsoft", badge: "text-blue-500 bg-blue-500/10" },
+            { title: "AWS Cloud Practitioner Essentials", issuer: "Amazon Web Services", badge: "text-amber-500 bg-amber-500/10" },
+            { title: "Cybersecurity Fundamentals", issuer: "IBM", badge: "text-indigo-500 bg-indigo-500/10" },
+            { title: "LLM Prompt Engineering", issuer: "NVIDIA", badge: "text-emerald-500 bg-emerald-500/10" },
           ].map((c) => (
-            <div key={c.title} className="rounded-lg border border-border bg-card p-3.5 flex items-center justify-between text-xs">
-              <span className="font-semibold text-foreground">{c.title}</span>
-              <span className="font-mono text-muted-foreground text-[11px]">{c.issuer}</span>
+            <div key={c.title} className="rounded-xl border border-border/80 bg-card/80 glass-panel p-4 flex items-center justify-between text-xs shadow-2xs hover:border-foreground/30 transition-all">
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                <span className="font-bold text-foreground text-xs sm:text-sm">{c.title}</span>
+              </div>
+              <span className={`font-mono text-[11px] px-2 py-0.5 rounded font-medium ${c.badge}`}>{c.issuer}</span>
             </div>
           ))}
         </div>
       </section>
 
       {/* Footer Contact Strip */}
-      <section className="pt-4 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <section className="pt-6 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="space-y-0.5 text-center sm:text-left">
-          <p className="text-sm font-semibold text-foreground">
+          <p className="text-sm font-bold text-foreground">
             Chirumamilla Mahesh Chowdary
           </p>
           <p className="text-xs text-muted-foreground font-mono">
             chirumamillamahesh2005@gmail.com • +91 9573409069
           </p>
         </div>
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-3">
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2 text-xs font-semibold text-background hover:bg-foreground/90 transition-all shadow-xs"
+            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-5 py-2.5 text-xs font-bold text-white shadow-md shadow-indigo-500/20 hover:scale-[1.02] transition-all"
           >
             <FileText className="h-3.5 w-3.5" />
             <span>Download Resume</span>
           </a>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background px-4 py-2 text-xs font-medium text-foreground hover:bg-muted transition-all"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-border/80 bg-card/80 glass-panel px-4 py-2.5 text-xs font-semibold text-foreground hover:bg-muted transition-all"
           >
             <span>Get in Touch</span>
             <ArrowRight className="h-3 w-3" />

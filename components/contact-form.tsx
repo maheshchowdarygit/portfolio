@@ -91,7 +91,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Name */}
         <div className="space-y-1.5">
-          <label htmlFor="name" className="text-xs font-semibold text-foreground">
+          <label htmlFor="name" className="text-xs font-bold text-foreground">
             Your Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -103,7 +103,7 @@ export function ContactForm() {
             onChange={handleChange}
             placeholder="Jane Doe"
             disabled={status === "loading"}
-            className="w-full rounded-lg border border-border bg-background px-3.5 py-2 text-sm text-foreground shadow-sm placeholder:text-muted-foreground focus:border-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:opacity-50"
+            className="w-full rounded-xl border border-border/80 bg-background/90 px-4 py-2.5 text-sm text-foreground shadow-inner placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
           />
           {fieldErrors.name && (
             <p className="text-xs text-red-500 font-medium">{fieldErrors.name[0]}</p>
@@ -112,7 +112,7 @@ export function ContactForm() {
 
         {/* Email */}
         <div className="space-y-1.5">
-          <label htmlFor="email" className="text-xs font-semibold text-foreground">
+          <label htmlFor="email" className="text-xs font-bold text-foreground">
             Email Address <span className="text-red-500">*</span>
           </label>
           <input
@@ -124,7 +124,7 @@ export function ContactForm() {
             onChange={handleChange}
             placeholder="jane@company.com"
             disabled={status === "loading"}
-            className="w-full rounded-lg border border-border bg-background px-3.5 py-2 text-sm text-foreground shadow-sm placeholder:text-muted-foreground focus:border-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:opacity-50"
+            className="w-full rounded-xl border border-border/80 bg-background/90 px-4 py-2.5 text-sm text-foreground shadow-inner placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
           />
           {fieldErrors.email && (
             <p className="text-xs text-red-500 font-medium">{fieldErrors.email[0]}</p>
@@ -134,7 +134,7 @@ export function ContactForm() {
 
       {/* Subject */}
       <div className="space-y-1.5">
-        <label htmlFor="subject" className="text-xs font-semibold text-foreground">
+        <label htmlFor="subject" className="text-xs font-bold text-foreground">
           Subject <span className="text-red-500">*</span>
         </label>
         <input
@@ -144,9 +144,9 @@ export function ContactForm() {
           required
           value={formData.subject}
           onChange={handleChange}
-          placeholder="Role Opportunity / Collaboration / Query"
+          placeholder="Software Engineer Role / Collaboration / Systems Query"
           disabled={status === "loading"}
-          className="w-full rounded-lg border border-border bg-background px-3.5 py-2 text-sm text-foreground shadow-sm placeholder:text-muted-foreground focus:border-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:opacity-50"
+          className="w-full rounded-xl border border-border/80 bg-background/90 px-4 py-2.5 text-sm text-foreground shadow-inner placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
         />
         {fieldErrors.subject && (
           <p className="text-xs text-red-500 font-medium">{fieldErrors.subject[0]}</p>
@@ -155,7 +155,7 @@ export function ContactForm() {
 
       {/* Message */}
       <div className="space-y-1.5">
-        <label htmlFor="message" className="text-xs font-semibold text-foreground">
+        <label htmlFor="message" className="text-xs font-bold text-foreground">
           Message <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -165,9 +165,9 @@ export function ContactForm() {
           required
           value={formData.message}
           onChange={handleChange}
-          placeholder="Hi Mahesh, I came across your portfolio and would like to discuss..."
+          placeholder="Hi Mahesh, I came across your portfolio and wanted to discuss..."
           disabled={status === "loading"}
-          className="w-full rounded-lg border border-border bg-background px-3.5 py-2 text-sm text-foreground shadow-sm placeholder:text-muted-foreground focus:border-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:opacity-50 resize-y min-h-[120px]"
+          className="w-full rounded-xl border border-border/80 bg-background/90 px-4 py-2.5 text-sm text-foreground shadow-inner placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50 resize-y min-h-[120px]"
         />
         {fieldErrors.message && (
           <p className="text-xs text-red-500 font-medium">{fieldErrors.message[0]}</p>
@@ -176,14 +176,14 @@ export function ContactForm() {
 
       {/* Feedback Messages */}
       {status === "success" && (
-        <div className="flex items-start gap-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-3.5 text-xs text-emerald-800 dark:text-emerald-300">
+        <div className="flex items-start gap-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 text-xs text-emerald-800 dark:text-emerald-300">
           <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400 mt-0.5" />
           <p className="leading-relaxed">{responseMsg}</p>
         </div>
       )}
 
       {status === "error" && (
-        <div className="flex items-start gap-2.5 rounded-lg bg-red-500/10 border border-red-500/30 p-3.5 text-xs text-red-800 dark:text-red-300">
+        <div className="flex items-start gap-2.5 rounded-xl bg-red-500/10 border border-red-500/30 p-4 text-xs text-red-800 dark:text-red-300">
           <AlertCircle className="h-4 w-4 shrink-0 text-red-600 dark:text-red-400 mt-0.5" />
           <p className="leading-relaxed">{responseMsg}</p>
         </div>
@@ -193,7 +193,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background shadow transition-all hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-indigo-500/20 transition-all hover:shadow-xl hover:shadow-indigo-500/30 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
       >
         {status === "loading" ? (
           <>

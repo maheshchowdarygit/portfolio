@@ -69,13 +69,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-background font-sans antialiased text-foreground flex flex-col justify-between selection:bg-foreground selection:text-background">
+      <body className="min-h-screen bg-background font-sans antialiased text-foreground flex flex-col justify-between selection:bg-primary/20 selection:text-primary relative overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          {/* Subtle Ambient Radiant Background Glows */}
+          <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+            <div className="absolute -top-32 left-1/4 h-[500px] w-[600px] rounded-full bg-gradient-to-br from-indigo-500/15 via-purple-500/10 to-sky-400/15 blur-[120px] dark:from-indigo-600/20 dark:via-purple-600/15 dark:to-cyan-400/15" />
+            <div className="absolute top-[35%] -right-20 h-[500px] w-[500px] rounded-full bg-gradient-to-bl from-blue-500/10 via-cyan-400/10 to-transparent blur-[130px] dark:from-blue-600/15 dark:via-cyan-500/10" />
+            <div className="absolute -bottom-20 left-10 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-purple-500/10 via-pink-400/10 to-transparent blur-[140px] dark:from-indigo-900/20 dark:via-purple-800/15" />
+          </div>
+
           <div className="relative min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>
